@@ -1,0 +1,154 @@
+<div *ngIf="percentage <= 100" class="loading-container">
+    <loading-comp [percentage]="percentage"></loading-comp>
+</div>
+<div *ngIf="percentage > 100">
+    <nz-layout>
+        <nz-header class="header" id="header">
+            <div style="cursor: pointer"><a href="/">Tsun Ming Yu</a></div>
+            <ul nz-menu nzSelectable="false" nzTheme="light" nzMode="horizontal">
+                <li nz-menu-item (click)="navigateTo('skill', 1000)">Skills</li>
+                <li nz-menu-item (click)="navigateTo('projects', 1000)">Projects</li>
+                <li nz-menu-item (click)="navigateTo('resume', 1000)">Resume</li>
+                <li nz-menu-item (click)="navigateTo('contact', 1000)">Contact Me</li>
+            </ul>
+        </nz-header>
+        <nz-content class="content">
+            <div class="intro">
+                <div class="text">
+                    <h2>Hi, I am Tsun Ming <br>
+                        a Lead Full Stack Engineer in Jersey City, New Jersey</h2>
+                    <h5>who is always excited use new technologies to improve legacy products</h5>
+                    <div class="action-buttons">
+                        <button nz-button nzType="primary" (click)="navigateTo('contact', 1000)">Contact Me</button>
+                        <span style="padding-left: 10px"></span>
+                        <button nz-button nzType="primary" (click)="navigateTo('resume', 1000)">See My Resume</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="skill" id="skill">
+                <div class="image">
+                    <img src="/assets/programming.png" />
+                </div>
+                <div class="text">
+                    <h2>What I do</h2>
+                    <h3>A super quick learner that is always looking to explore new development technologies</h3>
+                    <ul class="skill-list">
+                        <li>
+                            <img src="/assets/angular.svg">
+                            <span>Angular</span>
+                        </li>
+                        <li>
+                            <img src="/assets/html.svg">
+                            <span>HTML5</span>
+                        </li>
+                        <li>
+                            <img src="/assets/javascript.svg">
+                            <span>JavaScript</span>
+                        </li>
+                        <li>
+                            <img src="/assets/java.svg">
+                            <span>Java 8+</span>
+                        </li>
+                        <li>
+                            <img src="/assets/spring.png">
+                            <span>Spring</span>
+                        </li>
+                    </ul>
+                    <ul class="description-list">
+                        <li>
+                            <i nz-icon nzType="api" style="color: #ffd000" nzTheme="fill"></i>
+                            Develop resuable Front-End components for your web applications
+                        </li>
+                        <li>
+                            <i nz-icon nzType="api" style="color: #ffd000" nzTheme="fill"></i>
+                            Design interactive user interface for the best user experiences
+                        </li>
+                        <li>
+                            <i nz-icon nzType="api" style="color: #ffd000" nzTheme="fill"></i>
+                            Create reliable and scalable Back-End RESTful services with Java Spring Framework
+                        </li>
+                        <li>
+                            <i nz-icon nzType="api" style="color: #ffd000" nzTheme="fill"></i>
+                            Integration and Unit testing for both Front-End and Back-End
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="projects" id="projects">
+                <h2>Personal Projects</h2>
+                <div class="card-list">
+                    <span>
+                        <a href="https://ericyu049.github.io/hootel/index.html">
+                            <nz-card nzHoverable [nzCover]="coverTemplate">
+                                <nz-card-meta nzTitle="Hotel Booking Website"
+                                    nzDescription="https://ericyu049.github.io/hootel/index.html">
+                                </nz-card-meta>
+                            </nz-card>
+                        </a>
+
+                    </span>
+                    <span style="padding-right: 10px"></span>
+                    <!-- <span>
+                        <nz-card nzHoverable [nzCover]="coverTemplate">
+                            <nz-card-meta nzTitle="Europe Street beat" nzDescription="www.instagram.com"></nz-card-meta>
+                        </nz-card>
+                    </span>
+                    <span style="padding-right: 10px"></span>
+                    <span>
+                        <nz-card nzHoverable [nzCover]="coverTemplate">
+                            <nz-card-meta nzTitle="Europe Street beat" nzDescription="www.instagram.com"></nz-card-meta>
+                        </nz-card>
+                    </span> -->
+                    <ng-template #coverTemplate>
+                        <img src="/assets/hootel.png">
+                    </ng-template>
+                </div>
+            </div>
+            <div class="resume" id="resume">
+                <div class="text">
+                    <h2>Resume</h2>
+                    <h3>Check out my resume for more details about my career!</h3>
+                </div>
+                <div class="image">
+                    <nz-card style="width: 80%" nzHoverable [nzCover]="resumePreview" (click)="openResume()">
+                        <nz-card-meta nzDescription="Click here for more"></nz-card-meta>
+                    </nz-card>
+                    <ng-template #resumePreview>
+                        <img src="/assets/resume-preview.png">
+                    </ng-template>
+                </div>
+            </div>
+            <div class="contact" id="contact">
+
+                <div class="text">
+                    <h2>Contact Me</h2>
+                    <h3>Send me a message if you would like to talk to me!</h3>
+                    <br>
+                    <div style="font-size: 13pt"><i nz-icon nzType="mail" nzTheme="fill"
+                            style="padding-right: 15px;"></i>ericyu049@gmail.com</div>
+                    <div style="font-size: 13pt"><i nz-icon nzType="phone" nzTheme="fill"
+                            style="padding-right: 15px;"></i>(732) 997-0696</div>
+                    <div style="font-size: 13pt"><i nz-icon nzType="linkedin" nzTheme="fill"
+                            style="padding-right: 15px;"></i><a
+                            href="https://www.linkedin.com/in/tsun-ming-yu-716a371a2/">My Linkedin Account</a></div>
+                    <div style="font-size: 13pt"><i nz-icon nzType="github" nzTheme="fill"
+                        style="padding-right: 15px"></i><a href="https://github.com/ericyu049">https://github.com/ericyu049</a>
+                    </div>
+
+                </div>
+                <div class="image">
+                    <img src="/assets/contact.png">
+                </div>
+            </div>
+        </nz-content>
+        <nz-footer class="footer">
+        </nz-footer>
+    </nz-layout>
+
+    <button [hidden]="!showButton" class="backToTopButton" nz-button nzSize="large" nzType="primary" nzShape="round"
+        (click)="navigateTo('header', 1000)">
+        <i nz-icon nzType="arrow-up" nzTheme="outline"></i>
+    </button>
+
+</div>

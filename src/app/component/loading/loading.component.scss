@@ -1,0 +1,23 @@
+@keyframes play300 {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: -60000px 0px;
+    }
+}
+
+.loading {
+    animation-duration: 5000ms;
+    animation-timing-function: steps(300);
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+}
+
+.loading.play {
+    animation-name: play300;
+}
+.percentage {
+    text-align: center;
+}
