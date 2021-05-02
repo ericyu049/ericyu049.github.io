@@ -4,7 +4,7 @@
 <div *ngIf="percentage > 100">
     <nz-layout>
         <nz-header class="header" id="header">
-            <div style="cursor: pointer"><a href="/">Tsun Ming Yu</a></div>
+            <div style="cursor: pointer"><a (click)="navigateTo('header', 1000)">Tsun Ming Yu</a></div>
             <ul nz-menu nzSelectable="false" nzTheme="light" nzMode="horizontal">
                 <li nz-menu-item (click)="navigateTo('skill', 1000)">Skills</li>
                 <li nz-menu-item (click)="navigateTo('projects', 1000)">Projects</li>
